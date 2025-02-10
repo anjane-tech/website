@@ -1,124 +1,604 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="bumblebee">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.42.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="myscripts.js"></script>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
-    <title>anjane</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Anjane Tech</title>
 </head>
-<body>
-    <div class="container">
-        <section class="first cpad snap">  
-            <div class="topnav">
-            <a href="/" class="mobcen"><img src="topnav.png" alt="" class="topnavpng"></a> 
+
+<style>
+
+    
+
+    .nav-over-clients .logo-light {
+        display: none; 
+    }
+
+    .nav-over-clients .logo-dark {
+        display: block; 
+    }
+
+    .nav-over-clients .nav-link {
+        color: white; 
+    }
+
+    
+    .logo-dark {
+        display: none;
+    }
+   
+    html {
+        font-family: 'Poppins', sans-serif !important;
+    }
+
+    .clients img {
+        width: 128px;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+    }
+
+    .clients img:hover {
+        width: 128px;
+        cursor: pointer;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+    }
+    
+
+    .h:hover{
+        cursor: pointer;
+    }
+
+
+    
+.firstcontainer{
+    height: 70vh;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+}
+
+.firstimg{
+    margin-top: 50px;
+    width: 85vw;
+    max-width: 336px;
+    margin-bottom: 50px;
+}
+
+
+    
+
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(20%);
+        }
+
+        50% {
+            transform: translateX(-15%);
+        }
+
+        100% {
+            transform: translateX(20%);
+        }
+
+    }
+
+    @media only screen and (max-device-width: 480px){
+
+
+
+        .moving-text {
+        animation: marquee 40s linear infinite;
+    }
+    }
+
+    .moving-text {
+        animation: marquee 20s linear infinite;
+    }
+
+    
+
+    
+</style>
+
+
+
+<body class="mx-auto">
+    <nav id="mainNav" class="z-[1000000000000]  md:fixed  top-0 w-screen  p-2">
+        <div class="animate__animated animate__fadeInUp navbar ">
+            <div class="animate__animated animate__fadeInUp navbar-start">
+                <div class="animate__animated animate__fadeInUp dropdown">
+                    <label id="hamb" tabindex="0" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </label>
+                    <ul tabindex="0"
+                        class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a class="font-semibold underline" href="#product">Product</a></li>
+                        <li><a class="font-semibold underline" href="#services">Services</a></li>
+                        <li><a class="font-semibold underline" href="#about">About</a></li>
+                        <li><a class="font-semibold underline" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <a href="#hero" class="">
+                    <img  src="./logo.png" alt="" class="w-24 mx-3 p-2 rounded-md logo-light">
+                    <img  src="./logo-dark.png" alt="" class="w-24 mx-3 p-2 rounded-md logo-dark">
+                    <!-- <p class="">Anjane</p></a> -->
             </div>
-            <div class="firstcontainer">
+            <div class="animate__animated animate__fadeInUp navbar-end hidden lg:flex">
+                <ul class="menu menu-horizontal p-0">
+                    <li><a class="font-semibold underline nav-link" href="#product">Product</a></li>
+                    <li><a class="font-semibold underline nav-link" href="#services">Services</a></li>
+                    <li><a class="font-semibold underline nav-link" href="#about">About</a></li>
+                    <li><a class="font-semibold underline nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        .highlight-yellow{
+            position:relative;
+        }
+    
+        .highlight-yellow:before{
+            content:"";
+            background-color:#FFF500;
+            width:100%;
+            height:0.777em;
+            position:absolute;
+            z-index:-1;
+            filter:url(#marker-shape);
+            left:-0.25em;
+            top:0.4em;
+            padding:0 0.25em;
+        }
+    </style>
+
+    <section id="hero" class="min-h-screen">  
+        <div class="hero min-h-screen">
+            <div class="hero-content flex-col lg:flex-row-reverse">
                 <img src="first.png" alt="" class="firstimg">
-                <div class="hero hero1">
-                    Leverage the power of<div class="highlight-yellow">Data Analytics</div>to get insights into your data.
-                    <a class="hbtn" href="#contact">
-                        get in touch
-                    </a>
+                <div>
+                    
+                    <p class="font-black text-5xl/[1.2] max-w-md">
+                        Leverage the power of <br><span class="highlight-yellow">Data Analytics</span><br>to get insights into your data.
+                    </p>
+                    <button class="btn btn-neutral text-white mt-4">Get Started</button>
+            </div>
+            </div>
+          </div>
+        
+            
+         
+    </section>
+
+
+
+    <section id="clients"
+        class="clients px-12 bg-accent flex flex-col items-center justify-center align-center">
+        <p class="text-2xl font-bold mt-8 text-white mb-8">Our team has worked with</p>
+        <div class="animate__animated animate__fadeInUp flex items-center justify-center flex-wrap">
+
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./NYU-Symbol.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./aig.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./Bank-of-New-York-Mellon-Logo.svg.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./ub.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./Tenna-Logo-Horz-Orange-RGB-Medium-No-BG.webp" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./HSBC-Symbol.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./vm.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./qa.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            
+        </div>
+        <p class="text-2xl font-bold mt-8 text-white mb-8">Our Customers</p>
+        <div class="animate__animated animate__fadeInUp flex items-center justify-center flex-wrap">
+
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="sbd.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./hot.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./zd.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./sf.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./lt.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <svg width="100" height="40" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_39_227)">
+                    <path d="M30.253 18.774C27.3 16.402 23.405 15.198 18.678 15.198C16.0012 15.1604 13.3318 15.4871 10.743 16.169C8.45467 16.8131 6.26458 17.7655 4.233 19C4.09253 19.0867 3.98972 19.223 3.94491 19.3819C3.9001 19.5408 3.91655 19.7107 3.99101 19.858L7.12901 26.014C7.16828 26.0915 7.22265 26.1604 7.28894 26.2165C7.35523 26.2727 7.43209 26.315 7.515 26.341C7.5765 26.3585 7.64008 26.3675 7.70401 26.368C7.81411 26.3686 7.92253 26.341 8.01901 26.288C9.53371 25.4428 11.1529 24.8003 12.835 24.377C14.6728 23.9474 16.5558 23.7413 18.443 23.763C20.3628 23.6278 22.2637 24.2157 23.772 25.411C24.394 26.0216 24.8757 26.7602 25.1836 27.5756C25.4915 28.391 25.6182 29.2637 25.555 30.133V32.243C22.8095 31.3319 19.9268 30.9039 17.035 30.978C14.7853 30.9597 12.5428 31.2323 10.363 31.789C8.41376 32.2798 6.57933 33.147 4.96301 34.342C3.42044 35.5068 2.17352 37.0182 1.32301 38.754C0.400314 40.7195 -0.0532668 42.8724 -0.00199069 45.043C-0.0617779 47.3672 0.402711 49.6749 1.357 51.795C2.17573 53.5554 3.37326 55.1132 4.864 56.357C6.28332 57.5121 7.91995 58.3707 9.677 58.882C11.3767 59.3909 13.1408 59.6529 14.915 59.66C17.1849 59.6752 19.4277 59.1667 21.469 58.174C22.9353 57.4634 24.3069 56.5721 25.552 55.521V58.141C25.5516 58.2266 25.5681 58.3115 25.6005 58.3907C25.6329 58.47 25.6806 58.5421 25.7408 58.6029C25.8011 58.6637 25.8728 58.7121 25.9517 58.7452C26.0307 58.7784 26.1154 58.7956 26.201 58.796H34.118C34.2909 58.7949 34.4562 58.7254 34.5779 58.6026C34.6995 58.4798 34.7675 58.3138 34.767 58.141V29.741C34.767 24.875 33.246 21.187 30.25 18.78M25.55 46.174C24.516 47.4888 23.2506 48.6038 21.816 49.464C20.147 50.5073 18.2131 51.0482 16.245 51.022C13.765 51.022 11.911 50.446 10.737 49.311C10.1435 48.727 9.67992 48.0243 9.37663 47.2489C9.07335 46.4734 8.93717 45.6427 8.97701 44.811C8.94968 44.0342 9.11916 43.2631 9.4697 42.5694C9.82023 41.8757 10.3405 41.2818 10.982 40.843C12.709 39.7324 14.7429 39.1962 16.793 39.311C18.6015 39.2806 20.4084 39.4337 22.186 39.768C23.3472 40.0025 24.4765 40.3741 25.55 40.875V46.174Z" fill="white"/>
+                    <path d="M75.773 20.613C74.3687 18.8243 72.5496 17.405 70.473 16.478C68.4364 15.5994 66.24 15.1517 64.022 15.163C61.87 15.1296 59.7439 15.636 57.838 16.636C56.4581 17.3848 55.1522 18.2627 53.938 19.258V16.684C53.9383 16.5112 53.8702 16.3454 53.7486 16.2226C53.627 16.0999 53.4618 16.0303 53.289 16.029H45.289C45.2033 16.0292 45.1184 16.0464 45.0393 16.0795C44.9601 16.1125 44.8883 16.1608 44.8279 16.2216C44.7674 16.2825 44.7195 16.3546 44.6869 16.4339C44.6544 16.5132 44.6377 16.5982 44.638 16.684V79.344C44.6377 79.4565 44.6665 79.5671 44.7217 79.6651C44.7769 79.763 44.8566 79.845 44.953 79.903C45.0533 79.9674 45.1698 80.0021 45.289 80.003C45.3939 80.003 45.4971 79.9765 45.589 79.926L53.589 75.733C53.6947 75.6779 53.7832 75.5949 53.8449 75.4929C53.9066 75.391 53.9391 75.2741 53.939 75.155V55.737C55.0132 56.6671 56.1946 57.4658 57.458 58.116C59.3642 59.1141 61.4853 59.6314 63.637 59.623C65.8381 59.6247 68.0164 59.1766 70.038 58.306C72.1284 57.3945 73.9799 56.0122 75.448 54.267C77.0933 52.2803 78.3456 49.9987 79.138 47.544C80.1064 44.4797 80.5684 41.278 80.506 38.065C80.5693 34.584 80.1521 31.1109 79.266 27.744C78.5831 25.1607 77.3975 22.7375 75.777 20.613M68.909 47.767C68.235 48.7468 67.3192 49.5358 66.2504 50.0574C65.1816 50.579 63.9961 50.8155 62.809 50.744C61.8737 50.7492 60.9447 50.5908 60.064 50.276C59.1785 49.9531 58.3293 49.5385 57.53 49.039C56.758 48.5565 56.0331 48.0024 55.365 47.384C54.82 46.8837 54.3154 46.3409 53.856 45.761V28.871C54.9037 27.5746 56.149 26.4512 57.546 25.542C59.0088 24.5572 60.7337 24.0346 62.497 24.042C63.738 23.9825 64.9729 24.2509 66.0772 24.8202C67.1816 25.3895 68.1166 26.2395 68.788 27.285C70.295 29.519 71.058 33.224 71.058 38.293C71.058 42.531 70.336 45.716 68.911 47.765" fill="white"/>
+                    <path d="M109.762 16.094H100.22V0.653019C100.22 0.540249 100.191 0.429379 100.135 0.331241C100.08 0.233104 99.9997 0.151016 99.903 0.0929906C99.8035 0.0318036 99.6888 -0.000390623 99.572 3.57707e-06C99.4654 0.000518289 99.3605 0.0265685 99.266 0.0759923L91.349 4.33899C91.2451 4.3947 91.1582 4.47766 91.0978 4.57895C91.0374 4.68024 91.0056 4.79606 91.006 4.91401V16.094H85.775C85.6894 16.0943 85.6047 16.1114 85.5257 16.1445C85.4468 16.1776 85.3751 16.226 85.3149 16.2869C85.2547 16.3477 85.2071 16.4199 85.1749 16.4992C85.1426 16.5785 85.1264 16.6634 85.127 16.749V24.165C85.1266 24.2504 85.1431 24.3349 85.1755 24.4139C85.2079 24.4929 85.2555 24.5647 85.3158 24.6252C85.376 24.6856 85.4475 24.7336 85.5263 24.7664C85.6052 24.7991 85.6897 24.816 85.775 24.816H91.006V48.068C91.006 51.959 91.896 54.895 93.648 56.797C94.5801 57.7704 95.7104 58.5323 96.9624 59.031C98.2144 59.5298 99.5589 59.7538 100.905 59.688C102.451 59.703 103.993 59.5236 105.495 59.154C106.772 58.8409 108.001 58.3544 109.146 57.708C109.232 57.6576 109.306 57.5882 109.361 57.5049C109.416 57.4217 109.451 57.327 109.464 57.228L110.403 50.051C110.419 49.9303 110.402 49.8074 110.352 49.6961C110.302 49.5848 110.223 49.4895 110.122 49.421C110.022 49.3536 109.905 49.3155 109.784 49.3111C109.663 49.3067 109.544 49.3361 109.439 49.396C108.61 49.8504 107.734 50.2142 106.827 50.481C105.85 50.796 104.831 50.9599 103.804 50.967C103.308 51.0195 102.807 50.9735 102.329 50.8315C101.852 50.6896 101.407 50.4546 101.02 50.14C100.654 49.759 100.22 48.84 100.22 46.648V24.818H109.762C109.847 24.818 109.932 24.8011 110.011 24.7684C110.09 24.7357 110.161 24.6877 110.222 24.6272C110.282 24.5667 110.33 24.495 110.362 24.416C110.395 24.337 110.411 24.2524 110.411 24.167V16.751C110.412 16.6654 110.395 16.5804 110.363 16.5011C110.33 16.4218 110.283 16.3496 110.222 16.2888C110.162 16.2279 110.09 16.1796 110.011 16.1465C109.932 16.1134 109.848 16.0963 109.762 16.096" fill="white"/>
+                    <path d="M190.704 41.552C190.077 40.079 189.119 38.7702 187.904 37.727C186.542 36.572 185.028 35.6099 183.404 34.868C181.666 34.048 179.621 33.178 177.33 32.288C175.78 31.662 174.517 31.099 173.585 30.617C172.806 30.2318 172.069 29.7673 171.385 29.231C170.973 28.9225 170.632 28.5294 170.385 28.078C170.214 27.708 170.128 27.3045 170.134 26.897C170.126 26.4691 170.22 26.0455 170.409 25.6615C170.598 25.2774 170.875 24.944 171.219 24.689C172.389 23.9691 173.76 23.6448 175.128 23.764C176.948 23.7515 178.757 24.0328 180.487 24.597C182.248 25.2122 183.907 26.0886 185.408 27.197C185.482 27.2506 185.566 27.288 185.656 27.3068C185.745 27.3255 185.837 27.3251 185.927 27.3057C186.016 27.2862 186.1 27.2482 186.173 27.1939C186.247 27.1397 186.308 27.0705 186.353 26.991L189.879 20.757C189.958 20.6188 189.983 20.4568 189.951 20.3013C189.918 20.1457 189.83 20.0073 189.703 19.912C187.702 18.445 185.488 17.2943 183.138 16.5C180.636 15.6395 178.009 15.2022 175.363 15.206C173.401 15.1897 171.446 15.4363 169.549 15.939C167.86 16.3823 166.27 17.1409 164.863 18.175C163.539 19.1698 162.476 20.4701 161.763 21.965C161.019 23.5868 160.649 25.355 160.68 27.139C160.655 28.6684 160.879 30.1916 161.344 31.649C161.808 32.9997 162.568 34.2297 163.568 35.249C164.725 36.4044 166.042 37.3865 167.48 38.165C169.31 39.1684 171.211 40.0373 173.168 40.765C175.545 41.6527 177.861 42.6939 180.103 43.882C180.74 44.1511 181.287 44.5968 181.679 45.1664C182.071 45.7361 182.291 46.4059 182.315 47.097C182.315 48.067 182.315 51.022 175.44 51.022C173.468 51.0017 171.511 50.6665 169.645 50.029C167.567 49.3248 165.604 48.3162 163.822 47.036C163.749 46.984 163.666 46.9479 163.578 46.9297C163.491 46.9116 163.4 46.912 163.312 46.9308C163.225 46.9496 163.142 46.9865 163.07 47.039C162.997 47.0916 162.936 47.1586 162.891 47.236L159.214 53.386C159.13 53.526 159.102 53.6922 159.134 53.8521C159.166 54.012 159.257 54.1543 159.388 54.251C161.687 55.8949 164.211 57.1993 166.882 58.124C169.653 59.1302 172.577 59.6509 175.525 59.663C177.537 59.6694 179.543 59.452 181.507 59.015C183.33 58.6197 185.064 57.893 186.624 56.871C188.129 55.8529 189.369 54.4892 190.239 52.894C191.21 51.0057 191.684 48.9012 191.616 46.779C191.66 44.9934 191.349 43.2168 190.702 41.552" fill="white"/>
+                    <path d="M135.123 15.2C132.576 15.1867 130.055 15.7088 127.723 16.7324C125.392 17.756 123.301 19.2584 121.587 21.142C117.987 25.186 116.132 31.127 116.132 37.432C116.132 43.915 118.224 50.116 122.007 54.179C123.698 55.9467 125.736 57.3462 127.993 58.2896C130.25 59.2331 132.677 59.7003 135.123 59.662C137.977 59.6552 140.79 58.9837 143.34 57.7006C145.889 56.4175 148.104 54.5582 149.81 52.27C152.721 48.365 154.11 43.02 154.11 37.432C154.11 31.484 152.425 25.752 149.176 21.761C147.468 19.6909 145.32 18.0279 142.889 16.893C140.457 15.7582 137.802 15.1801 135.119 15.201M142.702 46.267C141.908 47.5775 140.798 48.6674 139.473 49.4363C138.148 50.2051 136.651 50.6284 135.119 50.667C133.817 50.6697 132.532 50.3773 131.359 49.8118C130.187 49.2463 129.157 48.4224 128.349 47.402C126.409 44.4974 125.355 41.0913 125.317 37.5985C125.278 34.1058 126.255 30.6771 128.13 27.73C128.959 26.6029 130.049 25.6929 131.306 25.0776C132.562 24.4622 133.949 24.1598 135.348 24.1959C136.747 24.232 138.116 24.6057 139.34 25.2851C140.563 25.9646 141.604 26.9296 142.374 28.098C143.985 30.8428 144.861 33.9565 144.919 37.1386C144.976 40.3208 144.212 43.464 142.701 46.265" fill="white"/>
+                    <path d="M196.126 55.318H196.784C197.008 55.3404 197.232 55.291 197.426 55.177C197.517 55.0999 197.576 54.9923 197.592 54.8745C197.609 54.7566 197.581 54.6369 197.515 54.538C197.458 54.458 197.378 54.3973 197.285 54.364C197.108 54.3148 196.924 54.2949 196.741 54.305H196.125L196.126 55.318ZM195.585 57.207V53.85H196.738C197.026 53.837 197.315 53.8687 197.594 53.944C197.766 54.0026 197.915 54.1165 198.016 54.268C198.118 54.4123 198.173 54.5845 198.173 54.761C198.174 54.8799 198.151 54.9978 198.106 55.1078C198.061 55.2179 197.994 55.3178 197.91 55.402C197.724 55.5891 197.474 55.6985 197.21 55.708C197.315 55.7494 197.412 55.8097 197.496 55.886C197.685 56.0886 197.851 56.3116 197.991 56.551L198.402 57.207H197.744L197.444 56.679C197.305 56.3862 197.113 56.1215 196.878 55.898C196.75 55.8117 196.598 55.7705 196.444 55.781H196.126V57.207H195.585ZM196.793 52.878C196.345 52.8812 195.905 52.9975 195.514 53.216C195.103 53.4351 194.765 53.7694 194.541 54.178C194.313 54.5734 194.191 55.0215 194.189 55.478C194.189 55.9314 194.308 56.3769 194.534 56.77C194.758 57.1765 195.093 57.5109 195.5 57.734C195.894 57.9598 196.34 58.0786 196.793 58.0786C197.247 58.0786 197.693 57.9598 198.087 57.734C198.493 57.5108 198.828 57.1764 199.051 56.77C199.277 56.3737 199.395 55.9252 199.394 55.4691C199.393 55.013 199.272 54.5651 199.044 54.17C198.82 53.7614 198.482 53.427 198.071 53.208C197.68 52.99 197.241 52.8737 196.794 52.87M196.794 52.354C197.331 52.3566 197.858 52.4941 198.328 52.754C198.82 53.0166 199.225 53.4174 199.493 53.907C199.766 54.3803 199.91 54.9168 199.911 55.4631C199.912 56.0094 199.771 56.5465 199.5 57.021C199.235 57.5136 198.834 57.9194 198.344 58.19C197.872 58.4588 197.337 58.6002 196.794 58.6002C196.251 58.6002 195.716 58.4588 195.244 58.19C194.756 57.9232 194.355 57.522 194.088 57.034C193.816 56.5599 193.674 56.0226 193.675 55.4761C193.676 54.9296 193.821 54.393 194.095 53.92C194.363 53.4302 194.769 53.0295 195.262 52.767C195.732 52.5071 196.259 52.3696 196.796 52.367" fill="#326295"/>
+                    <path d="M135.127 0.143982L126.374 8.95398H143.881L135.127 0.143982Z" fill="white"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_39_227">
+                    <rect width="199.909" height="80" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                    
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./otis.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./bh.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./dcn.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            
+        </div>
+        <p class="text-2xl font-bold mt-8 text-white mb-8">Our Partners</p>
+        <div class="animate__animated animate__fadeInUp flex items-center justify-center flex-wrap">
+
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="ddx.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./95af51_ae2122aebc944721a96afd10f3ccfe0c_mv2.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./bc.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./ta.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            <div class=" rounded-md m-1 hover:scale-125 transition-discrete transistion-all ">
+                <img src="./sparkda.png" alt="" class=" p-4 m-2 rounded-md">
+            </div>
+            
+            
+        </div>
+    </section>
+    <!-- <div class="animate__animated animate__fadeInUp rounded-md m-4 bg-base-100">
+        <img src="./95af51_ae2122aebc944721a96afd10f3ccfe0c_mv2.png" alt="" class=" p-4 m-2 rounded-md">
+    </div> -->
+    <section id="product" class="h-screen">
+        <p class="text-2xl font-bold text-left px-6 mt-8 text-neutral mb-14 md:text-center">Products By Anjane</p>
+
+        <div class="animate__animated animate__fadeInUp hero pb-14">
+            <div class="animate__animated animate__fadeInUp hero-content flex-col lg:flex-row">
+                <img src="./Logo_Anjane__30_-removebg-preview.png" class="rounded-lg md:w-1/2 mr-8 p-12" />
+                <div class="animate__animated animate__fadeInUp md:w-3/6 mt-8 ml-8">
+                    <h2 class="text-3xl font-bold mb-8">Managed dbt-core™ services in your own cloud.
+
+                        Get ready to transform your data with our transform orchestration.</h2>
+
+                    <a href="https://dataopsly.com" class="btn btn-primary text-white font-bold">visit</a>
                 </div>
             </div>
-        </section>
-        <section class="second cpad snap">
-            <img src="2nd.png" alt="" class="secondimg">
-            <div class="hero ralign">
-                With the help of ETL<span class="highlight-cyan">Data Integration</span>  get an unified view of all your data from different sources in a single place</div>
-        </section>
+        </div>
+    </section>
+    <section id="services" class="flex flex-col items-center justify-center align-center">
+        <p class="text-2xl font-bold mt-8 text-primary mb-8">Services we offer includes...</p>
+        
 
-        <section class="third yelbg cpad snap">
-            <!-- <img src="MOBtools.png" srcset="desktools.png 768w, MOBtools.png 0w" alt="" class="thirdimg"> -->
+        <div class="animate__animated animate__fadeInUp flex justify-center items-center">
+            <div class="animate__animated animate__fadeInUp grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 max-w-screen-xl w-full">
+                <div class="animate__animated animate__fadeInUp card bg-base-100 shadow-md">
+                    <figure><img class=" h-64  p-4" src="./dataextraction.svg" alt="Data Extraction" /></figure>
+                    <div class="animate__animated animate__fadeInUp card-body">
+                        <h2 class="card-title">
+                            Data Extraction
+                        </h2>
+                        <p>Data extraction is the act or process of retrieving data out of data sources for further data processing or data storage. The import into the intermediate extracting system is thus usually followed by data transformation and possibly the addition of metadata prior to export to another stage in the data workflow.</p>
+                        <div class="animate__animated animate__fadeInUp card-actions justify-end">
+                        </div>
+                    </div>
+                </div>
+                <div class="animate__animated animate__fadeInUp card bg-base-100 shadow-md">
+                    <figure><img class=" h-64  p-4" src="./data_collection.svg" alt="Data Transformation" /></figure>
+                    <div class="animate__animated animate__fadeInUp card-body">
+                        <h2 class="card-title">
+                            Data Transforming
+                        </h2>
+                        <p>In computing, data transformation is the process of converting data from one format or structure into another format or structure. It is a fundamental aspect of most data integration and data management tasks such as data wrangling, data warehousing, data integration and application integration.</p>
+                        <div class="animate__animated animate__fadeInUp card-actions justify-end">
+                        </div>
+                    </div>
+                </div>
+                <div class="animate__animated animate__fadeInUp card bg-base-100 shadow-md">
+                    <figure><img class=" h-64  p-4" src="./datatransform.svg" alt="Data Loading" /></figure>
+                    <div class="animate__animated animate__fadeInUp card-body">
+                        <h2 class="card-title">
+                            Data Loading
+                        </h2>
+                        <p>The load phase loads the data into the end target, which can be any data store including a simple delimited flat file or a data warehouse. Depending on the requirements of the organization, this process varies widely. Some data warehouses may overwrite existing information with cumulative information; updating extracted data is frequently done on a daily, weekly, or monthly basis.</p>
+                        <div class="animate__animated animate__fadeInUp card-actions justify-end">
+                        </div>
+                    </div>
+                </div>
+                <div class="animate__animated animate__fadeInUp card bg-base-100 shadow-md">
+                    <figure><img class=" h-64  p-4" src="./dwm.svg" alt="Data Warehouse Migration" /></figure>
+                    <div class="animate__animated animate__fadeInUp card-body">
+                        <h2 class="card-title">
+                            Data Warehouse Migration
+                        </h2>
+                        <p>Data warehouse migration is the process of moving an existing data warehouse to a new environment, whether it's on-premise, hybrid, or cloud-based. This involves data restructuring, performance optimization, and ensuring minimal downtime.</p>
+                        <div class="animate__animated animate__fadeInUp card-actions justify-end">
+                        </div>
+                    </div>
+                </div>
+                <div class="animate__animated animate__fadeInUp card bg-base-100 shadow-md">
+                    <figure><img class=" h-64  p-4" src="./mtc.svg" alt="ETL Migration" /></figure>
+                    <div class="animate__animated animate__fadeInUp card-body">
+                        <h2 class="card-title">
+                            ETL Migration to Cloud
+                        </h2>
+                        <p>ETL (Extract, Transform, Load) migration to the cloud involves shifting traditional ETL processes from on-premise infrastructure to cloud-based platforms. This enhances scalability, reduces costs, and improves data processing efficiency.</p>
+                        <div class="animate__animated animate__fadeInUp card-actions justify-end">
+                        </div>
+                    </div>
+                </div>
+                <div class="animate__animated animate__fadeInUp card bg-base-100 shadow-md">
+                    <figure><img class=" h-64  p-4" src="./cntctus.svg" alt="Contact Us" /></figure>
+                    <div class="animate__animated animate__fadeInUp card-body">
+                        <h2 class="card-title">
+                            and much more
+                        </h2>
+                        <p>Get in touch with us for your data needs</p>
+                        <div class="animate__animated animate__fadeInUp card-actions justify-end">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        </div>
+        <p class="text-2xl font-bold text-left px-6 mt-8 text-neutral mb-14 md:text-center">With the help of ETL
+            Data Integration
+            get an unified view of all your data from different sources in a single place</p>
+
+        <div class="animate__animated animate__fadeInUp hero pb-14">
+            <div class="animate__animated animate__fadeInUp hero-content flex-col lg:flex-row">
+                <img src="./rocket.svg" class="rounded-lg md:w-2/6 mr-8 p-12" />
+                <div class="animate__animated animate__fadeInUp md:w-3/6 mt-8 ml-8">
+                    <h2 class="text-3xl font-bold mb-8">Scale your business more
+                        efficiently
+                        by making better decisions and see patterns in your data</h2>
+
+                    <a href="#contact" class="btn btn-primary text-white font-bold">Get in touch</a>
+                </div>
+            </div>
+        </div>
+        <p class="text-2xl font-bold text-left px-6 mt-8 text-info mb-14 md:text-center">Our Tech Stack Uses the best technolgy available
+            out there in the market to serve your needs.</p>
+        <div class="animate__animated animate__fadeInUp bg-info rounded-xl m-4 shadow-lg">
             <picture>
-                <source media="(max-width: 600px)" srcset="MOBtools.png" >
+                <source media="(max-width: 600px)" srcset="MOBtools.png">
                 <source media="(min-width: 599px)" srcset="desktools.png">
-                <img src="MOBtools.png" alt="" style="max-width: 300px; max-height: 75vh; " class="desk3">
+                <img src="MOBtools.png" alt="" class="p-6 my-4">
             </picture>
-            <p class="threetxt">
-                Using the best technolgy available out there in the market to serve your needs
-            </p>
-        </section>
+        </div>
+    </section>
 
-        <section class="fourth darbg cpad snap">
-            <div class="fourcon">
-            <img src="4th.png" alt="" class="fourthimg">
-            <div class="hero whitebg ralign">
-                Scale your business more <div class="highlight-pur">efficiently</div> by making better decisions and see patterns in your data</div>
-            </div>    
-        </section>
+    <section id="about" class="flex flex-wrap items-center justify-center align-center my-16 min-h-max md:mx-28 px-9">
 
-        <section class="fifth cpad snap">
-            <p class="fivetxt">Meet the team
-                behind <div class="underline-yellow big">anjane</div>
-            </p>
-            <div class="cardrow">
-                <div class="tcard">
-                    <img src="1.png" alt="" class="timg">
-                    <div class="tcon">
-                        <div class="ttitle">Bala Ramachandran</div>
-                        <div class="ttext">
-                        Data Engineering Consultant with experience in both traditional and Cloud Data Warehouses.
-                        Have worked for top Banks like HSBC & BNY Mellon, Top Higher Education (NYU) and startups.
+        <div class="animate__animated animate__fadeInUp card lg:card-side bg-base-100 shadow-sm">
+            
+            <div class="animate__animated animate__fadeInUp card-body ">
+                <h2 class="card-title">About the company</h2>
+                <p>Anjane Technologies helps businesses harness the power of Data Analytics to unlock valuable insights from their data. We offer a range of services, including data extraction, transforming, and loading to create a unified view of your data from different sources in a single place.</p>
+                <p>We provide services and dataopsly</p>
+                <h2 class="card-title mb-4">Meet the team</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2  gap-8 px-4 md:px-8">
+
+                    <!-- Person 1 -->
+                    <div class="bg-white  h-48 rounded-lg shadow-md flex overflow-hidden">
+                      <img  src="./b.png" alt="Team Member 1"
+                        class=" ">
+                      <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-700">Person 1</h3>
+                        <p class="text-sm text-gray-500">Job Title 1</p>
+                        <p class="text-gray-600 mt-2">Short bio about Person 1.</p>
+                      </div>
+                    </div>
+                    <!-- Person 1 -->
+                    <div class="bg-white  h-48 rounded-lg shadow-md flex overflow-hidden">
+                        <img  src="./hs.png" alt="Team Member 1"
+                          class=" ">
+                        <div class="p-4">
+                          <h3 class="text-lg font-semibold text-gray-700">Person 1</h3>
+                          <p class="text-sm text-gray-500">Job Title 1</p>
+                          <p class="text-gray-600 mt-2">Short bio about Person 1.</p>
                         </div>
-                    </div>
-                </div>
-                <div class="tcard">
-                    <img src="2.jpeg" alt="" class="timg">
-                    <div class="tcon">
-                        <div class="ttitle">Sudha Chandrasekhar</div>
-                        <div class="ttext">
-                        Human Resources Administration & Project Management Professional experienced in handling operations for leading International Organizations like Nokia Siemens, Sify..
+                      </div>
+                      <!-- Person 1 -->
+                    <div class="bg-white  h-48 rounded-lg shadow-md flex overflow-hidden">
+                        <img  src="./b.png" alt="Team Member 1"
+                          class=" ">
+                        <div class="p-4">
+                          <h3 class="text-lg font-semibold text-gray-700">Person 1</h3>
+                          <p class="text-sm text-gray-500">Job Title 1</p>
+                          <p class="text-gray-600 mt-2">Short bio about Person 1.</p>
                         </div>
-                    </div>
-                </div>
-                <div class="tcard">
-                    <img src="3.jpeg" alt="" class="timg">
-                    <div class="tcon">
-                        <div class="ttitle">Venkat Ramachandran</div>
-                        <div class="ttext">Data Engineering & Integration Consultant with vast experience in US Banking domain.</div>
-                    </div>
-                </div>
+                      </div>
+                      <!-- Person 1 -->
+                    <div class="bg-white  h-48 rounded-lg shadow-md flex overflow-hidden">
+                        <img  src="./b.png" alt="Team Member 1"
+                          class=" ">
+                        <div class="p-4">
+                          <h3 class="text-lg font-semibold text-gray-700">Person 1</h3>
+                          <p class="text-sm text-gray-500">Job Title 1</p>
+                          <p class="text-gray-600 mt-2">Short bio about Person 1.</p>
+                        </div>
+                      </div>
+                      <!-- Person 1 -->
+                    <div class="bg-white  h-48 rounded-lg shadow-md flex overflow-hidden">
+                        <img  src="./vs.png" alt="Team Member 1"
+                          class=" ">
+                        <div class="p-4">
+                          <h3 class="text-lg font-semibold text-gray-700">Person 1</h3>
+                          <p class="text-sm text-gray-500">Job Title 1</p>
+                          <p class="text-gray-600 mt-2">Short bio about Person 1.</p>
+                        </div>
+                      </div>
+                      <!-- Person 1 -->
+                    <div class="bg-white  h-48 rounded-lg shadow-md flex overflow-hidden">
+                        <img  src="./b.png" alt="Team Member 1"
+                          class=" ">
+                        <div class="p-4">
+                          <h3 class="text-lg font-semibold text-gray-700">Person 1</h3>
+                          <p class="text-sm text-gray-500">Job Title 1</p>
+                          <p class="text-gray-600 mt-2">Short bio about Person 1.</p>
+                        </div>
+                      </div>
+                      <!-- Person 1 -->
+                    <div class="bg-white  h-48 rounded-lg shadow-md flex overflow-hidden">
+                        <img  src="./sp.png" alt="Team Member 1"
+                          class=" ">
+                        <div class="p-4">
+                          <h3 class="text-lg font-semibold text-gray-700">Person 1</h3>
+                          <p class="text-sm text-gray-500">Job Title 1</p>
+                          <p class="text-gray-600 mt-2">Short bio about Person 1.</p>
+                        </div>
+                      </div>
+                      <!-- Person 1 -->
+                    <div class="bg-white  h-48 rounded-lg shadow-md flex overflow-hidden">
+                        <img  src="./ap.png" alt="Team Member 1"
+                          class=" ">
+                        <div class="p-4">
+                          <h3 class="text-lg font-semibold text-gray-700">Person 1</h3>
+                          <p class="text-sm text-gray-500">Job Title 1</p>
+                          <p class="text-gray-600 mt-2">Short bio about Person 1.</p>
+                        </div>
+                      </div>
+                      <!-- Person 1 -->
+                    <div class="bg-white  h-48 rounded-lg shadow-md flex overflow-hidden">
+                        <img  src="./ac.png" alt="Team Member 1"
+                          class=" ">
+                        <div class="p-4">
+                          <h3 class="text-lg font-semibold text-gray-700">Person 1</h3>
+                          <p class="text-sm text-gray-500">Job Title 1</p>
+                          <p class="text-gray-600 mt-2">Short bio about Person 1.</p>
+                        </div>
+                      </div>
+              
+                    
+              
+                  </div>
+                
+
             </div>
-            <p class="fiveetxt">
-                We help you make sense of your data, so that you can make informed decisions.
-            </p>
-        </section>
-        <section class="third cpad snap" id="contact">
-            <div class="yelbg sixty">
-                <img src="6th.png" alt="" class="sixthimg">
-                <p class="hero6">Send us a mail regarding your needs and we’ll get back to you </p>
-                <div class="mial">
-                    <input type="text" value="mail@anjane.tech" class="mail" disabled id="mailid"> <br>
-                    <div class="mbtn" onclick="ctc()">copy to clipboard<img src="copy.png" alt=""></div>
-                    <div class="mblack"></div>
+         
+
+        </div>
+
+
+
+    </section>
+
+    <div class="animate__animated animate__fadeInUp bg-primary min-h-screen flex flex-col items-center justify-end">
+    <section id="contact" class="flex flex-wrap items-center justify-center align-center ">
+        <div class="animate__animated animate__fadeInUp hero min-h-max md:mx-28">
+            <div class="animate__animated animate__fadeInUp hero-content flex-col lg:flex-row">
+              
+              <div class="animate__animated animate__fadeInUp card flex-shrink-0 w-full  shadow-2xl bg-base-100">
+                <div class="animate__animated animate__fadeInUp card-body">
+                  <div class="animate__animated animate__fadeInUp form-control">
+                    <img src="./calendar.svg" class="h-64" alt="">
+                    <p class="text-4xl font-bold">
+                        Connect with us over a call
+                    </p>
+                    
+                  </div>
+                  <div class="animate__animated animate__fadeInUp form-control mt-6">
+                    <a class="btn btn-info">Send</a>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="darbg forty">
-                <div class="bottomnav">
-                    <img src="bottomnav.png" alt="">
-                </div>
-                Copyright 2023
-                <br>
-                <br>
-            </div>
-        </section>
+          </div>
+    </section>
+
+    <footer class="footer footer-center p-10 text-primary-content">
+        <div>
+          <!-- <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" class="inline-block fill-current"><path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path></svg> -->
+          <p class="font-bold">
+            Anjane Tech <br/>Providing reliable data services since 2021
+          </p> 
+          <p>Copyright © 2025 - All right reserved</p>
+        </div> 
+        <div>
+          <!-- <div class="animate__animated animate__fadeInUp grid grid-flow-col gap-4">
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a> 
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg></a> 
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>
+          </div> -->
+        </div>
+      </footer>
     </div>
+
 </body>
 
+</html>
+
+
+
+      
 <script>
-    function ctc() {
-        var copyText = document.getElementById("mailid");
-        copyText.select();
-        copyText.setSelectionRange(0, 99999);
-        navigator.clipboard.writeText(copyText.value);
-        alert("Copied the text: " + copyText.value);
-    }
+    const nav = document.getElementById('mainNav');
+    const clientsSection = document.getElementById('clients');
+    const productSection = document.getElementById('product');
+
+    window.addEventListener('scroll', () => {
+        const clientsRect = clientsSection.getBoundingClientRect();
+        const productRect = productSection.getBoundingClientRect();
+
+        // Check if the top of the clients section is near the top of the viewport
+        if (clientsRect.top <= 50 && productRect.top > 50) {
+            nav.classList.add('nav-over-clients');
+            document.getElementById('hamb').classList.add('text-white')
+        } else {
+            nav.classList.remove('nav-over-clients');
+            document.getElementById('hamb').classList.remove('text-white')
+        }
+    });
 </script>
 
-</html>
+    
